@@ -7,8 +7,8 @@ import {
   randUrl
 } from '@ngneat/falso';
 import { delay, Observable, of, throwError } from 'rxjs';
-import { Page } from './page';
-import { Product } from './product';
+import { Page } from '../interfaces/page';
+import { Product } from '../interfaces/product';
 
 /**
  * A service to handle products.
@@ -23,10 +23,10 @@ export class ProductService {
 
   /**
    * Get a page of products.
-   * 
+   *
    * *Note:* This is a fake service that returns random data. It simulates a
    * network request by delaying the response and randomly returning an error.
-   * 
+   *
    * @param page The page number.
    * @returns An observable of the page of products.
    */
