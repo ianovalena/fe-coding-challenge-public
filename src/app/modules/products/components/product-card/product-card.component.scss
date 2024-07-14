@@ -1,0 +1,56 @@
+:host {
+  height: 100%;
+}
+
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+
+  &__title {
+
+  }
+
+  &__description {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 3.9em; /* Fallback for non-webkit, line-height * 3 */
+    line-height: 1.3em;
+    -webkit-line-clamp: 3; /* if you change this, make sure to change the fallback line-height and height */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__category-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__category {
+    border: 1px solid;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+}

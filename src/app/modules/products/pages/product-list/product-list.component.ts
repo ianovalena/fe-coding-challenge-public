@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import {ProductService} from "../../services/product.service";
-import {Observable} from "rxjs";
-import {Page} from "../../interfaces/page";
-import {Product} from "../../interfaces/product";
-import {AsyncPipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
+import { ProductService } from "../../services/product.service";
+import { Observable } from "rxjs";
+import { Page } from "../../interfaces/page";
+import { Product } from "../../interfaces/product";
+import { CommonModule } from "@angular/common";
+import { ProductCardComponent } from "../../components/product-card/product-card.component";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
   imports: [
-    AsyncPipe,
-    JsonPipe,
-    NgForOf,
-    NgIf
+    CommonModule,
+    ProductCardComponent,
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'

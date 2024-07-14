@@ -1,1 +1,14 @@
-<p>product-card works!</p>
+<section class="product-card">
+  <img class="product-card__image" [src]="product.image" [alt]="'Image of ' + product.title">
+  <div class="product-card__content">
+    <div class="product-card__main-info">
+      <h2 class="product-card__title">{{ product.title }}</h2>
+      <p class="product-card__description">{{ product.description }}</p>
+    </div>
+    <ul class="product-card__category-list">
+      @for (category of product.categories; track category) {
+        <li class="product-card__category">{{ category }}</li>
+      }
+    </ul>
+  </div>
+</section>

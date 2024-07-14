@@ -1,6 +1,17 @@
-<div class="stage">
-  <div class="products" *ngIf="products$ | async; let products">
-    <pre *ngFor="let product of products.content">{{ product | json }}</pre>
-  </div>
-  <button class="more">Load more</button>
+<div class="product-list__wrapper">
+  @if (products$ | async; as products) {
+    <ul class="product-list">
+      @for (product of products.content; track product.url) {
+        <li class="product-list__item">
+          <a class="product-list__item-link"
+             [href]="product.url"
+             target="_blank"
+             [attr.area-label]="'Go to ' + product.title">
+            <app-product-card [product]="product"></app-product-card>
+          </a>
+        </li>
+      }
+    </ul>
+  }
+  <button class="product-list__more-button">Load more</button>
 </div>

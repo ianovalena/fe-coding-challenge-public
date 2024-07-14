@@ -1,29 +1,41 @@
-.stage {
-  width: 50%;
-  min-width: 360px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem;
-  background-color: #fff;
-}
-
-pre {
+.product-list {
   overflow: auto;
-  background-color: #f2f4f7;
   padding: 1rem;
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1.5rem;
 
-.more {
-  font: inherit;
-  display: block;
-  margin: 4rem auto 0;
-  border: 1px solid #d7dbe0;
-  border-radius: .25rem;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  cursor: pointer;
+  &__wrapper {
+    width: 50%;
+    min-width: 360px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem;
+    background-color: #fff;
+  }
 
-  &:hover, &:focus {
-    background-color: #ebecf0;
+  &__item {
+    list-style: none;
+  }
+
+  &__item-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__more-button {
+    font: inherit;
+    display: block;
+    margin: 4rem auto 0;
+    border: 1px solid #d7dbe0;
+    border-radius: .25rem;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      background-color: #ebecf0;
+    }
   }
 }
