@@ -3,12 +3,7 @@
     <ul class="product-list">
       @for (product of products.content; track product.url) {
         <li class="product-list__item">
-          <a class="product-list__item-link"
-             [href]="product.url"
-             target="_blank"
-             [attr.area-label]="'Go to ' + product.title">
-            <app-product-card [product]="product"></app-product-card>
-          </a>
+          <app-product-card [product]="product"></app-product-card>
         </li>
       }
     </ul>

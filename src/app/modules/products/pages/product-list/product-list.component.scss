@@ -7,35 +7,31 @@
   gap: 1.5rem;
 
   &__wrapper {
-    width: 50%;
+    width: 70%;
     min-width: 360px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 4rem;
-    background-color: #fff;
+    background-color: var(--color-white);
   }
 
   &__item {
     list-style: none;
   }
 
-  &__item-link {
-    text-decoration: none;
-    color: black;
-  }
-
   &__more-button {
     font: inherit;
     display: block;
     margin: 4rem auto 0;
-    border: 1px solid #d7dbe0;
+    border: 1px solid var(--color-accent-2);
     border-radius: .25rem;
     padding: 1rem 2rem;
-    background-color: #fff;
+    color: var(--color-accent-4);
+    background-color: var(--color-white);
     cursor: pointer;
 
     &:hover, &:focus {
-      background-color: #ebecf0;
+      background-color: var(--color-accent-1);
     }
   }
 }

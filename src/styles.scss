@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import 'assets/colors';
 
 body {
+  @include basic-palette;
+  @include purple-accent-palette;
+
   margin: 0;
-  background-color: #f2f4f7;
+  background-color: var(--color-grey-light-1);
   font-family: 'Open Sans', sans-serif;
 }

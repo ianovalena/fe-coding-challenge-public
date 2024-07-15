@@ -3,12 +3,36 @@
 }
 
 .product-card {
+  --box-shadow-color: var(--color-grey-light-2);
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  box-shadow: var(--box-shadow-color) 0 2px 8px 0;
   border-radius: 0.5rem;
   overflow: hidden;
+  background-color: white;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    --box-shadow-color: var(--color-grey-light-3);
+
+    .product-card__title {
+      color: var(--color-accent-4);
+    }
+  }
+
+  &:active {
+    --box-shadow-color: var(--color-grey-light-4);
+
+    .product-card__title {
+      color: var(--color-accent-5);
+    }
+  }
+
+  &__link-wrapper {
+    text-decoration: none;
+    color: black;
+  }
 
   &__image {
     display: block;
@@ -26,18 +50,21 @@
   }
 
   &__title {
-
+    margin: 0;
+    font-size: 1.2rem;
   }
 
   &__description {
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
-    height: 3.9em; /* Fallback for non-webkit, line-height * 3 */
-    line-height: 1.3em;
-    -webkit-line-clamp: 3; /* if you change this, make sure to change the fallback line-height and height */
+    font-size: 0.8rem;
+    height: 3.3rem; /* Fallback for non-webkit */
+    line-height: 1.1rem;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 1rem 0;
   }
 
   &__category-list {
@@ -49,8 +76,10 @@
   }
 
   &__category {
-    border: 1px solid;
+    border: 1px solid var(--color-accent-3);
+    color: var(--color-accent-4);
     padding: 2px 5px;
     border-radius: 5px;
+    font-size: 0.7rem;
   }
 }
