@@ -1,12 +1,26 @@
 <div class="product-list__wrapper">
-  @if (products$ | async; as products) {
+  @if (products().length) {
     <ul class="product-list">
-      @for (product of products.content; track product.url) {
+      @for (product of products(); track product.url + product.title) {
         <li class="product-list__item">
           <app-product-card [product]="product"></app-product-card>
         </li>
       }
     </ul>
+
+    @if (displayShowMoreButton()) {
+      <button class="product-list__more-button" (click)="loadMoreClick()" [disabled]="isLoading()">
+        {{ isLoading() ? 'Loading...' : 'Load more' }}
+      </button>
+    }
   }
-  <button class="product-list__more-button">Load more</button>
+
+  @if (!products().length && isLoading()) {
+    global spinner!
+  }
+
+  @if (!products().length && !isLoading()) {
+    sorry, we wasn't able load anything :((((((((
+  }
 </div>
+
