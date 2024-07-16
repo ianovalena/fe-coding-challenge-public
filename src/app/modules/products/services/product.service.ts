@@ -6,7 +6,7 @@ import {
   randProductName,
   randUrl
 } from '@ngneat/falso';
-import { delay, Observable, of, throwError } from 'rxjs';
+import { delay, Observable, of, switchMap, throwError } from 'rxjs';
 import { Page } from '../interfaces/page';
 import { Product } from '../interfaces/product';
 
@@ -42,10 +42,13 @@ export class ProductService {
       res = { more: true, content };
     }
     if (res) {
-      return (this.randBooleanWeighted(ProductService.PAGE_ERROR)
-        ? throwError(() => new Error('500 Internal Server Error'))
-        : of(res)
-      ).pipe(delay(randNumber({ min: 150, max: 1500 })));
+      return of(null).pipe(
+        delay(randNumber({ min: 150, max: 1500 })),
+        switchMap(() => (this.randBooleanWeighted(ProductService.PAGE_ERROR)
+          ? throwError(() => new Error('500 Internal Server Error'))
+          : of(res))
+        )
+      );
     }
     return throwError(() => new Error('400 Bad Request'));
   }
