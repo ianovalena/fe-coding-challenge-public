@@ -8,7 +8,7 @@
       }
     </ul>
 
-    @if (displayShowMoreButton()) {
+    @if (displayLoadMoreButton()) {
       <button class="product-list__more-button" (click)="loadMoreClick()" [disabled]="isLoading()">
         @if (isLoading()) {
           <div class="loader-s product-list__more-button-loader" aria-valuetext="loading"></div>

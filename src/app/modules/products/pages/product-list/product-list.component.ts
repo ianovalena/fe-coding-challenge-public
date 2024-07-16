@@ -22,7 +22,7 @@ import { ProductCardComponent } from '../../components/product-card/product-card
 export class ProductListComponent implements OnInit {
   isLoading: WritableSignal<boolean> = signal(true);
   products: WritableSignal<Product[]> = signal([]);
-  displayShowMoreButton: WritableSignal<boolean> = signal(true);
+  displayLoadMoreButton: WritableSignal<boolean> = signal(true);
   displayLoadingError: WritableSignal<boolean> = signal(false);
 
   private loadMore: Subject<void> = new Subject<void>();
@@ -39,9 +39,10 @@ export class ProductListComponent implements OnInit {
         tap(() => this.isLoading.set(true)),
         tap(() => this.displayLoadingError.set(false)),
         switchMap(() => this.productService.get(this.page)),
+        // We can add retry to avoid some errors. Commented for proper error testing purposes
         //retry(1),
         tap(result => {
-          this.displayShowMoreButton.set(result.more);
+          this.displayLoadMoreButton.set(result.more);
           this.products.update(prevProducts => [...prevProducts, ...result.content])
         }),
         tap(() => this.page++),

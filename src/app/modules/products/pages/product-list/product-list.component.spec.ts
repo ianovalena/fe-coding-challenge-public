@@ -72,14 +72,14 @@ describe('ProductListComponent', () => {
 
     it('should update more button visibility', () => {
       fixture.detectChanges();
-      expect(component.displayShowMoreButton()).toBeTrue();
+      expect(component.displayLoadMoreButton()).toBeTrue();
 
       getProductsResponse.next({
         ...mockProductResponse,
         more: false,
       });
 
-      expect(component.displayShowMoreButton()).toBeFalse();
+      expect(component.displayLoadMoreButton()).toBeFalse();
     });
 
     it('should hide spinner when products received', () => {
