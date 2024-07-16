@@ -11,7 +11,7 @@
     @if (displayShowMoreButton()) {
       <button class="product-list__more-button" (click)="loadMoreClick()" [disabled]="isLoading()">
         @if (isLoading()) {
-          <div class="loader-s product-list__more-button-loader" area-valuetext="loading"></div>
+          <div class="loader-s product-list__more-button-loader" aria-valuetext="loading"></div>
         }
         Load more
       </button>
@@ -19,7 +19,7 @@
   }
 
   @if (!products().length && isLoading()) {
-    <div area-valuetext="loading" class="product-list__loader-container">
+    <div aria-valuetext="loading" class="product-list__loader-container">
       <div class="loader-l"></div>
     </div>
   }
