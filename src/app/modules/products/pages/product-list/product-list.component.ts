@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, OnInit, signal, WritableSignal} from '@angular/core';
-import {ProductService} from "../../services/product.service";
-import {catchError, concat, of, Subject, switchMap, tap} from "rxjs";
-import {Product} from "../../interfaces/product";
-import {CommonModule} from "@angular/common";
-import {ProductCardComponent} from "../../components/product-card/product-card.component";
+import { ChangeDetectionStrategy, Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { ProductService } from '../../services/product.service';
+import { catchError, concat, of, Subject, switchMap, tap } from 'rxjs';
+import { Product } from '../../interfaces/product';
+import { CommonModule } from '@angular/common';
+import {ProductCardComponent} from '../../components/product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
