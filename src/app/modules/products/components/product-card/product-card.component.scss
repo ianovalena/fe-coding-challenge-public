@@ -9,9 +9,7 @@
   flex-direction: column;
   box-shadow: var(--box-shadow-color) 0 2px 8px 0;
   border-radius: 0.5rem;
-  overflow: hidden;
-  background-color: white;
-  transition: all 250ms ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     --box-shadow-color: var(--color-grey-light-3);
@@ -31,7 +29,7 @@
 
   &__link-wrapper {
     text-decoration: none;
-    color: black;
+    color: var(--color-grey-dark-1);
   }
 
   &__image {
@@ -80,6 +78,6 @@
     color: var(--color-accent-4);
     padding: 0.1rem 0.4rem;
     border-radius: 0.25rem;;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
