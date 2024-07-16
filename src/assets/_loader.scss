@@ -1,0 +1,27 @@
+@mixin loader($width, $border-size, $color) {
+  width: $width;
+  height: $width;
+  border: $border-size solid $color;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-l {
+  @include loader(5rem, 0.5rem, var(--color-accent-3));
+}
+
+.loader-s {
+  @include loader(1.2rem, 0.2rem, var(--color-accent-3));
+}

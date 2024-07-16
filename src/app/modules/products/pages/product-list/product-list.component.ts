@@ -21,8 +21,8 @@ export class ProductListComponent implements OnInit {
   products: WritableSignal<Product[]> = signal([]);
   displayShowMoreButton: WritableSignal<boolean> = signal(true);
 
-  private loadMore: Subject<null> = new Subject();
-  private page: number = 0;
+  private loadMore: Subject<void> = new Subject<void>();
+  private page = 0;
 
   constructor(private readonly productService: ProductService) {}
 
@@ -45,10 +45,10 @@ export class ProductListComponent implements OnInit {
       )
       .subscribe();
 
-    this.loadMore.next(null);
+    this.loadMore.next();
   }
 
   loadMoreClick() {
-    this.loadMore.next(null);
+    this.loadMore.next();
   }
 }
