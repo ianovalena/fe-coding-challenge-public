@@ -3,7 +3,11 @@
    target="_blank"
    [attr.aria-label]="'Go to ' + product.title">
   <section class="product-card">
-    <img class="product-card__image" [src]="product.image" [alt]="'Image of ' + product.title">
+    <img class="product-card__image"
+         #img
+         [src]="product.image"
+         [alt]="'Image of ' + product.title"
+         (error)="img.src = 'assets/images/fallback.svg'"/>
     <div class="product-card__content">
       <div class="product-card__main-info">
         <h2 class="product-card__title">{{ product.title }}</h2>
